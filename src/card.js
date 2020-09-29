@@ -1,14 +1,14 @@
-import CardList from "../../cardList.js"
-import './Card.css'
-function Card(title, content){
-    return(
-        <div className="Card">
-        <h3>{title}</h3>
-        <p>{content}</p>
-    </div>
-    );
+
+import './Card.css';
+import React from 'react';
+
+
+export default function Card (props) { 
+    return ( 
+    <div className='Card'> 
+        <button type='button'>delete</button> 
+        <h3>{props.title}</h3> 
+        <p>{props.content}</p> 
+    </div> ) 
 }
 
-export default {
-    Card
-}

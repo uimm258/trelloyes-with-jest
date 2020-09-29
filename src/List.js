@@ -1,21 +1,28 @@
-import Card from './card'
-import './List.css'
-function List(header, cards){
-    const list = cards.forEach(item =>{
-        <Card key={item.id} title={item.title} content={item.content}/>
-    });
-        return (
-        <section class="List">
-            <header class="List-cards">
-                {header}
-            </header>
-            <div class="List-cards">
-                {list}
-            </div>
-        </section>
-    )
-}
+import React from 'react';
+import Card from './Card'
+import './List.css';
 
-export default{
-    List
+export default function List(props) {
+  return (
+    <section className='List'>
+      <header className='List-header'>
+        <h2>{props.header}</h2>
+      </header>
+      <div className='List-cards'>
+        {props.cards.map((card) =>
+          <Card
+            key={card.id}
+            title={card.title}
+            content={card.content}
+          />
+        )}
+        <button
+          type='button'
+          className='List-add-button'
+        >
+          + Add Random Card
+        </button>
+      </div>
+    </section>
+  )
 }

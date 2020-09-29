@@ -8,7 +8,7 @@ import renderer from 'react-test-renderer';
 
 
 // make the App component available
-import App from './App';
+import Card from './Card';
 
 // this is the test case
 it('renders without crashing', () => {
@@ -16,7 +16,7 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
 
   // render the component, this is the actual test, if something is wrong it will fail here
-  ReactDOM.render(<App lists={[]}/>, div);
+  ReactDOM.render(<Card/>, div);
 
   // clean up code
   ReactDOM.unmountComponentAtNode(div);
@@ -25,7 +25,7 @@ it('renders without crashing', () => {
 
 it('render the UI as expected', () => {
     const tree = renderer
-        .create(<App lists={[]}/>)
+        .create(<Card title="title" content="content"/>)
         .toJSON();
     expect(tree).toMatchSnapshot();  
 });

@@ -38,7 +38,11 @@ const STORE = {
     },
   }
 
-  export default {
+  export default 
       STORE
-  }
   
+  
+
+
+
+ 
